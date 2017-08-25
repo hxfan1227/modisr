@@ -1,0 +1,16 @@
+Package: modisr
+Type: Package
+Title: modisr: R toolset for processing MODIS satelite images
+Version: 0.1.0
+Authors@R: c(person("Hongxiang", "Fan", , "fanhongxiang13@mails.ucas.ac.cn", c("aut", "cre")))
+Maintainer: Hongxiang Fan <fanhongxiang13@mails.ucas.ac.cn>
+Description: A package for easy proessing MODIS satelite images.
+License: GPL-2 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: raster,
+    gdalUtils,
+    rgdal,
+    foreach,
+    stringr
+RoxygenNote: 6.0.1
