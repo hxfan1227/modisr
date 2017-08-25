@@ -35,7 +35,7 @@ batch_mrt_reporjection <- function(hdf_date,
                                    proj_type,
                                    rename = T,
                                    ...){
-  reproject_modis_hdf(hdf_name = file.path(mosaic_hdf_path, paste0(hdf_date, ".hdf")),
+  reproject_modis_hdf(hdf_fpname = file.path(mosaic_hdf_path, paste0(hdf_date, ".hdf")),
                       dst_fpname = file.path(mosaic_tif_path, paste0(hdf_date, ".tif")),
                       bands_subset = bands_subset,
                       proj_type = proj_type, ...)
