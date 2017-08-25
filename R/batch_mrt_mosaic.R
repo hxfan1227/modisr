@@ -10,8 +10,8 @@
 # raw_hdf_path is the path where the original MOD16 HDF files are stored.
 # mosaic_hdf_path is the path to store the mosaic HDF files
 
-#' Mosiac a series of MODSI satellite images.
-#' @param hdf_date The date of the MODIS satellite image using MRT.
+#' Mosiac a series of MODSI satellite images using MRT.
+#' @param hdf_date The date of the MODIS satellite image.
 #' Can be obtained from the \code{\link{get_hdf_dates}} function.
 #' @param raw_hdf_path The path of the downloaded hdf files.
 #' @param mosaic_hdf_path The path to store the mosaiced hdf files.
@@ -25,7 +25,7 @@
 #' you need to first install MRT software (\url{https://lpdaac.usgs.gov/tools/modis_reprojection_tool})
 #' on your machine, and introduce its' path through the
 #' mrt_path argument.
-#' @seealso \code{\link{mosaic_modis_hdf}} \code{\link{reproject_modis_hdf}}
+#' @seealso \code{\link{mosaic_modis_hdf}} \code{\link{reproject_modis_hdf}} \code{\link{get_hdf_dates}}
 batch_mrt_mosaic <- function(hdf_date,
                              raw_hdf_path,
                              mosaic_hdf_path,
