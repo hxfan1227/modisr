@@ -1,6 +1,6 @@
-#' Create progress bar for \code{foreach()} function.
+#' Create progress bar for \code{foreach} function.
 #' @param max  Numeric value (finite) for the extreme of the progress bar.
-#' @param style The ‘style’ of the bar – see ‘Details’.
+#' @param style The ‘style’ of the bar. See ‘Details’.
 #' @return A list which could pass to \code{\link[foreach]{foreach}}
 #' through \code{.options.snow} argument.
 #' @details \code{style = 1} and \code{style = 2} just shows a line of char.
