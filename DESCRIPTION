@@ -12,5 +12,7 @@ Imports: raster,
     gdalUtils,
     rgdal,
     foreach,
-    stringr
+    stringr,
+    doSNOW,
+    snow
 RoxygenNote: 6.0.1
