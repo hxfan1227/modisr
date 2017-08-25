@@ -1,5 +1,5 @@
 #' Reproject MODIS hdf file and save it in desired format.
-#' @param hdf_name The name of the hdf file.
+#' @param hdf_fname The name of the hdf file.
 #' @param dst_fpname The full name of the output file. e.g. "C:/out.tif".
 #' @param mrt_path The path of the MRT executable file. If missing, default is "C:/MRT/bin".
 #' @param UL The upper-left corner of the processing extent.
@@ -20,7 +20,7 @@
 #' on your machine, and introduce its' path through the
 #' mrt_path argument.
 
-reproject_modis_hdf <- function(hdf_name,
+reproject_modis_hdf <- function(hdf_fname,
                                 dst_fpname,
                                 mrt_path,
                                 UL = "",
@@ -39,7 +39,7 @@ reproject_modis_hdf <- function(hdf_name,
                                    mustWork = F,
                                    winslash = "/")
   proj_prm_file = file(proj_prm_fpname, open = "wt")
-  write(paste('INPUT_FILENAME = ',hdf_name, sep = ""), proj_prm_file)
+  write(paste('INPUT_FILENAME = ',hdf_fname, sep = ""), proj_prm_file)
   if (bands_subset != '') {
     write(paste('SPECTRAL_SUBSET = ( ',bands_subset,' )', sep = ''), proj_prm_file, append = TRUE)
   }
