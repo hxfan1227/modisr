@@ -14,5 +14,6 @@ Imports: raster,
     foreach,
     stringr,
     doSNOW,
-    snow
+    snow,
+    plyr
 RoxygenNote: 6.0.1
