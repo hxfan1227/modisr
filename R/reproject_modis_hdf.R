@@ -1,10 +1,3 @@
-# Notes:
-# Frank, 2016-12-06, fanhongxiang13@mails.ucas.ac.cn
-# Please install MRT tools in advance if you want to use these functions,
-# The suggested path for MRT is "C:/MRT/bin", which is the default setting of these functions
-# Customized function for reprojecting MOD16 HDF files and saving in desired format
-# Modified from the original version in the 'rts' pacakge by Babak Naimi
-
 #' Reproject MODIS hdf file and save it in desired format.
 #' @param hdf_name The name of the hdf file.
 #' @param dst_fpname The full name of the output file. e.g. "C:/out.tif".
