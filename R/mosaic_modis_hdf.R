@@ -1,5 +1,5 @@
 #' Mosaic MODIS hdf files.
-#' @param hdf_names The names of the hdf files to be mosaiced.
+#' @param hdf_fnames The names of the hdf files to be mosaiced.
 #' @param dst_fpname The full name of the output hdf file. e.g. "C:/out.hdf".
 #' @param mrt_path The path of the MRT executable file. If missing, default is "C:/MRT/bin".
 #' @param bands_subset A character vector indicating the spectral subset of the input hdf file.
