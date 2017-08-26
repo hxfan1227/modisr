@@ -18,8 +18,7 @@
 #' or by passing it a directory and (typically) a search pattern (e.g. pattern=".tif").
 #'
 #' If a parallel engine is started and registered with foreach,
-#' this program will run in parallel (one gdal_translate per worker).
-#'
+#' this program will run in parallel (one gdalwrap per worker).
 #' \code{gdalwrap} will execute based on parameters passed to it,
 #' and the output file will be named based on the input file (stripped of its extension),
 #' with the outsuffix appended to it.
@@ -42,7 +41,7 @@ batch_gdal_mask <- function (infiles,
 {
   if (verbose)
     message("Checking gdal_installation...")
-  gdal_setInstallation()
+  gdalUtils::gdal_setInstallation()
   if (is.null(getOption("gdalUtils_gdalPath")))
     return()
   infile <- NULL
