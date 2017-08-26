@@ -1,6 +1,8 @@
+#' @importFrom foreach %dopar%
+#' @importFrom foreach %do%
+NULL
 #' Mask batch of satellite images using gdalwrap.
 #' @export
-#'
 #' @param infiles Character. A directory or a character vector of files (including their path).
 #' If a directory, all files matching the pattern will be converted.
 #' @param outdir Character. Output directory to save the output files.
@@ -64,7 +66,7 @@ batch_gdal_mask <- function (infiles,
   .out_file_path <- function(x,
                              .outsuffix = outsuffix,
                              .outdir = outdir) {
-    outfilename <- paste(remove_file_extension(basename(x)), .outsuffix, sep = "")
+    outfilename <- paste(gdalUtils::remove_file_extension(basename(x)), .outsuffix, sep = "")
     outfilepath <- normalizePath(file.path(.outdir, outfilename), mustWork = FALSE)
     return(outfilepath)
   }
@@ -80,21 +82,21 @@ batch_gdal_mask <- function (infiles,
     opts <- list(progress = progress)
     foreach::foreach(infile = infiles,
                      outfile = outfiles,
-                     .packages = "gdalUtils",
                      .options.snow = opts) %dopar% {
                        gdalUtils::gdalwarp(srcfile = infile,
                                            dstfile = outfile,
-                                           verbose = verbose, ...)
+                                           verbose = verbose,
+                                           ...)
                      }
     snow::stopCluster(cl)
     on.exit(close(pb))
   } else{
     foreach::foreach(infile = infiles,
-                     outfile = outfiles,
-                     .packages = "gdalUtils") %do% {
+                     outfile = outfiles) %do% {
                        gdalUtils::gdalwarp(srcfile = infile,
                                            dstfile = outfile,
-                                           verbose = verbose, ...)
+                                           verbose = verbose,
+                                           ...)
                      }
   }
   return(1)
