@@ -28,7 +28,7 @@ NULL
 #' @return Either a list of NULLs or
 #' a list of RasterBricks depending on whether output_Raster is set to TRUE.
 #'
-#' @seealso \code{\link[gdalUtils]{gdalwrap}}
+#' @seealso \code{\link[gdalUtils]{gdalwarp}}
 
 
 batch_gdal_mask <- function (infiles,
