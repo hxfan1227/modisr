@@ -13,8 +13,6 @@
 #' @importFrom foreach %do%
 NULL
 #' Mosiac a series of MODSI satellite images using MRT.
-#' @param hdf_date The date of the MODIS satellite image.
-#' Can be obtained from the \code{\link{get_hdf_dates}} function.
 #' @param raw_hdf_path The path of the downloaded hdf files.
 #' @param mosaic_hdf_path The path to store the mosaiced hdf files.
 #' @param bands_subset A character vector indicating the spectral subset of the input hdf file.

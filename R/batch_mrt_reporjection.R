@@ -13,8 +13,6 @@
 #' @importFrom foreach %do%
 NULL
 #' Reproject a series of MODSI satellite images using MRT.
-#' @param hdf_date The date of the MODIS satellite image using MRT.
-#' Can be obtained from the \code{\link{get_hdf_dates}} function.
 #' @param mosaic_hdf_path The path to store the mosaiced hdf files.
 #' @param mosaic_tif_path The path to stroe the mosaiced tif files.
 #' @param .parallel Logical. Should reprojection be executed in parallel mode?
