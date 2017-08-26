@@ -8,6 +8,7 @@
 #' the terminal running the master process.
 #' @param export Character list of variables to export. Pass to \code{\link[snow]{clusterExport}}.
 #' @param lib Character list of packages to export. Pass to \code{\link[snow]{clusterEvalQ}}.
+#' @export
 create_snow_cluster = function(noCores, logfile = "/dev/null", export = NULL, lib = NULL) {
   cl <- snow::makeCluster(noCores, type = "SOCK", outfile = logfile)
   if(!is.null(export)) snow::clusterExport(cl, export)

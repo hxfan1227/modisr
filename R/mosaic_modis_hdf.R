@@ -11,6 +11,7 @@
 #' you need to first install MRT software (\url{https://lpdaac.usgs.gov/tools/modis_reprojection_tool})
 #' on your machine, and introduce its' path through the
 #' mrt_path argument.
+#' @export
 
 mosaic_modis_hdf <- function(hdf_fpnames,
                              dst_fpname,

@@ -3,6 +3,7 @@
 #' @param hdf_path The path of the downloaded hdf files.
 #' @param pattern Pattern to look for. Pass to \code{\link[stringr]{str_extract}}.
 #' @return A character vector.
+#' @export
 get_hdf_dates <- function(hdf_path, pattern = "\\d{4}M\\d{2}"){
   hdf_list <- list.files(hdf_path, pattern = ".hdf$", full.names = T)
   # get the length of the time series

@@ -28,6 +28,7 @@
 #' on your machine, and introduce its' path through the
 #' mrt_path argument.
 #' @seealso \code{\link{mosaic_modis_hdf}} \code{\link{reproject_modis_hdf}} \code{\link{get_hdf_dates}}
+#' @export
 batch_mrt_reporjection <- function(hdf_date,
                                    mosaic_hdf_path,
                                    mosaic_tif_path,

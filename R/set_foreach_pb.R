@@ -9,6 +9,7 @@
 #' \code{style = 3} marks the end of the range by | and gives a percentage
 #' to the right of the bar.
 #' @seealso \code{\link[utils]{txtProgressBar}} \code{\link[utils]{setTxtProgressBar}}
+#' @export
 set_foreach_pb <- function(max, style = 3){
   pb <- utils::txtProgressBar(max = max, style = style)
   progress <- function(n) utils::setTxtProgressBar(pb, n)
