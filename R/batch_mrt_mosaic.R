@@ -38,6 +38,17 @@ batch_mrt_mosaic <- function(raw_hdf_path,
                              delete = FALSE,
                              .parallel = TRUE,
                              nCores = 4){
+  if(length(list.files(mosaic_hdf_path)) != 0){
+    unlink(mosaic_hdf_path, recursive = T)
+    dir.create(mosaic_hdf_path)
+  }
+  temp_dir_already_exist <- dir.exists("./temp")
+  if (!temp_dir_already_exist){
+    dir.create("./temp")
+    message(paste("Create folder: ",
+                  normalizePath(path.expand("./temp"), mustWork = F),
+                  sep = ""))
+  }
   hdf_dates <- modisr::get_hdf_dates(raw_hdf_path)
   if(.parallel){
     message("Run in parallel mode:")
@@ -54,10 +65,6 @@ batch_mrt_mosaic <- function(raw_hdf_path,
                                         bands_subset = bands_subset,
                                         delete = delete)
                      }
-    on.exit({
-      snow::stopCluster(cl)
-      close(pb)
-      })
   } else{
     foreach::foreach(hdf_date = hdf_dates) %do% {
       mosaic_modis_hdf(hdf_fpnames = list.files(raw_hdf_path,
@@ -68,5 +75,9 @@ batch_mrt_mosaic <- function(raw_hdf_path,
                        delete = delete)
     }
   }
-
+  on.exit({
+    snow::stopCluster(cl)
+    close(pb)
+    unlink("./temp", recursive = T)
+  })
 }
