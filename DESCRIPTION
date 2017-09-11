@@ -16,5 +16,9 @@ Imports: raster,
     doSNOW,
     snow,
     plyr,
-    ggplot2
+    ggplot2,
+    scales,
+    JBTools,
+    ggsci,
+    ggthemes
 RoxygenNote: 6.0.1

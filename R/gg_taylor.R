@@ -1,4 +1,5 @@
 #' @import ggplot2
+#' @import scales
 NULL
 #' Plot Taylor Diagram with ggplot2
 #' @export
