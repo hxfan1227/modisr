@@ -15,5 +15,6 @@ Imports: raster,
     stringr,
     doSNOW,
     snow,
-    plyr
+    plyr,
+    ggplot2
 RoxygenNote: 6.0.1
