@@ -8,6 +8,7 @@ Description: A package for easy proessing MODIS satelite images.
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true
+ByteCompile: yes
 Imports: raster,
     gdalUtils,
     rgdal,
